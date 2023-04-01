@@ -12,7 +12,7 @@ Node::Node(const int id, std::string name)
 std::list<Node*>* Node::find(const std::string name)
 {
   std::list<Node*>* pResult = new std::list<Node*>;
-  if (this->getName().compare(m_name))
+  if (name == this->getName())
   {
     pResult->push_back(this);
   }

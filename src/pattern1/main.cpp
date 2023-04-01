@@ -8,12 +8,19 @@ using namespace design_pattern;
 
 int main(int argc, char* argv[])
 {
-  File file = File(0, "file1.txt");
-  Directory dir = Directory(0, "directory1");
-  std::list<Node*>* pResult = dir.find("directory1");
-  for (int i = 0; i < pResult->size(); i++)
+  File* file = new File(0, "file1.txt");
+  Directory* dir = new Directory(0, "directory1");
+  dir->add(file);
+  std::list<Node*>* pResult = dir->find("file1.txt");
+  for (auto it = pResult->begin(); it != pResult->end();)
   {
-    std::cout << "find name : "  << std::endl;
+    std::cout << "find name :" << (*it)->getName() << std::endl;
+    it++;
   }
+
+  delete file;
+  file = nullptr;
+  delete dir;
+  dir = nullptr;
   return 0;
 }
