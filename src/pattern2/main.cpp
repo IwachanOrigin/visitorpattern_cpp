@@ -1,27 +1,22 @@
 
-#include "visitor.h"
-#include "findvisitor.h"
+#include "visitor.hpp"
+#include "findvisitor.hpp"
 #include <iostream>
 
 using namespace design_pattern;
 
 int main(int argc, char* argv[])
 {
-  File* file = new File(0, "file1.txt");
-  Directory* dir = new Directory(0, "directory1");
-  dir->add(file);
+  File file(0, "file1.txt");
+  Directory dir(0, "directory1");
+  dir.add(&file);
 
   FindVisitor fv;
-  std::list<Node*>* pResult = fv.find(dir, "file1.txt");
-  for (auto it = pResult->begin(); it != pResult->end();)
+  auto pResult = fv.find(&dir, "file1.txt");
+  for (auto& _node : pResult)
   {
-    std::cout << "find name :" << (*it)->getName() << std::endl;
-    it++;
+    std::cout << "find name :" << _node->getName() << std::endl;
   }
 
-  delete file;
-  file = nullptr;
-  delete dir;
-  dir = nullptr;
   return 0;
 }

@@ -3,12 +3,15 @@ project(pattern2 CXX)
 
 set(MAIN_SRC
   directory.cpp
+  directory.hpp
   file.cpp
+  file.hpp
   findvisitor.cpp
-  findvisitor.h
+  findvisitor.hpp
   main.cpp
   node.cpp
-  visitor.h
+  node.hpp
+  visitor.hpp
 )
 
 add_executable(
