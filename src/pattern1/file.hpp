@@ -10,9 +10,9 @@ namespace design_pattern
 class File : public Node
 {
 public:
-  explicit File(const int id, const std::string name);
-  virtual ~File();
-  virtual void add(Node* pNode);
+  explicit File(const int& id, const std::string& name);
+  virtual ~File() = default;
+  virtual void add(Node* pNode) override;
 };
 
 } // design_pattern
