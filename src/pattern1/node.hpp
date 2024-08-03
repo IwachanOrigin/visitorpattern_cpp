@@ -15,7 +15,7 @@ public:
   virtual ~Node() = default;
 
   virtual void add(Node* pNode) = 0;
-  std::list<Node*>* find(const std::string name);
+  std::list<Node*> find(const std::string& name);
   int getId() { return m_id; }
   std::string getName() { return m_name; }
 

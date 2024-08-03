@@ -9,12 +9,13 @@ Node::Node(const int id, std::string name)
 {
 }
 
-std::list<Node*>* Node::find(const std::string name)
+std::list<Node*> Node::find(const std::string& name)
 {
-  std::list<Node*>* pResult = new std::list<Node*>;
+  std::list<Node*> pResult;
   if (name == this->getName())
   {
-    pResult->push_back(this);
+    pResult.push_back(this);
   }
   return pResult;
 }
+

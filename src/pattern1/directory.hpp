@@ -13,7 +13,7 @@ public:
   explicit Directory(const int& id, const std::string& name);
   virtual ~Directory() = default;
   virtual void add(Node* pNode);
-  virtual std::list<Node*>* find(const std::string& name);
+  virtual std::list<Node*> find(const std::string& name);
 
 private:
   std::list<Node*> m_children;

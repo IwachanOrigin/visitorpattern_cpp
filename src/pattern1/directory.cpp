@@ -12,16 +12,15 @@ void Directory::add(Node* pNode)
   m_children.push_back(pNode);
 }
 
-std::list<Node*>* Directory::find(const std::string& name)
+std::list<Node*> Directory::find(const std::string& name)
 {
-  std::list<Node*>* pResult = new std::list<Node*>;
+  std::list<Node*> pResult;
   for (auto& _node : m_children)
   {
     auto temp = _node->find(name);
-    if (!temp->empty())
+    if (!temp.empty())
     {
-      pResult->merge(*temp);
-      delete temp;
+      pResult.merge(temp);
     }
   }
   return pResult;
