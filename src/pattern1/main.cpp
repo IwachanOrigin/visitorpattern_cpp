@@ -1,7 +1,7 @@
 
-#include "node.h"
-#include "file.h"
-#include "directory.h"
+#include "node.hpp"
+#include "file.hpp"
+#include "directory.hpp"
 #include <iostream>
 
 using namespace design_pattern;

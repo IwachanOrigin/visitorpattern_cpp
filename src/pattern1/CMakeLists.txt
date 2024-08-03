@@ -3,12 +3,12 @@ project(pattern1 CXX)
 
 set(MAIN_SRC
   directory.cpp
-  directory.h
+  directory.hpp
   file.cpp
-  file.h
+  file.hpp
   main.cpp
   node.cpp
-  node.h
+  node.hpp
 )
 
 add_executable(
